@@ -15,11 +15,11 @@ export default function ThemeMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button size="icon" variant="ghost">
           {theme === "dark" ? (
-            <MoonStar className="h-4 w-4" />
+            <MoonStar className="h-6 w-6" />
           ) : (
-            <Sun className="h-4 w-4" />
+            <Sun className="h-6 w-6" />
           )}
         </Button>
       </DropdownMenuTrigger>

@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Menu, Linkedin } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +20,7 @@ export default function Header() {
           <Sheet>
             <SheetTrigger asChild>
               <Button size="icon" variant="ghost">
-                <Menu className="h-4 w-4" />
+                <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
@@ -68,6 +68,11 @@ export default function Header() {
         </div>
 
         <div>
+          <Button size="icon" variant="ghost">
+            <a target="_blank" href="https://www.linkedin.com/in/abhayvatoo/">
+              <Linkedin className="h-6 w-6" />
+            </a>
+          </Button>
           <ThemeMenu />
         </div>
       </div>
