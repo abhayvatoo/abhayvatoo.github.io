@@ -25,7 +25,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <SheetHeader>
-                <SheetTitle>Abhay</SheetTitle>
+                <SheetTitle>AV</SheetTitle>
               </SheetHeader>
               <div className="grid gap-4 py-4">
                 <SheetClose asChild>
@@ -50,7 +50,7 @@ export default function Header() {
 
         <div className="hidden sm:flex">
           <Button variant="link" className="text-lg">
-            <a href="/">Abhay</a>
+            <a href="/">AV</a>
           </Button>
         </div>
         <div className="hidden sm:flex">
