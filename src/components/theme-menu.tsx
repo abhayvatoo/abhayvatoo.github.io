@@ -1,4 +1,4 @@
-import { Sun, MoonStar } from "lucide-react";
+import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -17,9 +17,9 @@ export default function ThemeMenu() {
       <DropdownMenuTrigger asChild>
         <Button size="icon" variant="ghost">
           {theme === "dark" ? (
-            <MoonStar className="h-6 w-6" />
+            <MoonIcon className="h-5 w-5 sm:h-4 sm:w-4" />
           ) : (
-            <Sun className="h-6 w-6" />
+            <SunIcon className="h-5 w-5 sm:h-4 sm:w-4" />
           )}
         </Button>
       </DropdownMenuTrigger>
@@ -30,7 +30,7 @@ export default function ThemeMenu() {
             variant="ghost"
             onClick={() => updateTheme("light")}
           >
-            <Sun className="mr-2 h-4 w-4" /> Light
+            <SunIcon className="mr-2 h-4 w-4" /> Light
           </Button>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -39,7 +39,7 @@ export default function ThemeMenu() {
             variant="ghost"
             onClick={() => updateTheme("dark")}
           >
-            <MoonStar className="mr-2 h-4 w-4" /> Dark
+            <MoonIcon className="mr-2 h-4 w-4" /> Dark
           </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>
