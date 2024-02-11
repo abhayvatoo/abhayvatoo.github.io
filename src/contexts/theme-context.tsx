@@ -1,6 +1,6 @@
-import { useEffect, useState, createContext, ReactNode } from "react";
+import { createContext, useEffect, useState, ReactNode } from "react";
 
-export type Theme = "light" | "dark";
+export type Theme = "dark" | "light" | "system";
 
 type ThemeContextProviderProps = {
   children: ReactNode;
@@ -8,7 +8,7 @@ type ThemeContextProviderProps = {
 
 type ThemeContextType = {
   theme: Theme;
-  updateTheme: (theme: Theme) => void;
+  setTheme: (theme: Theme) => void;
 };
 
 export const ThemeContext = createContext<ThemeContextType | null>(null);
@@ -16,40 +16,34 @@ export const ThemeContext = createContext<ThemeContextType | null>(null);
 export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
-  const [theme, setTheme] = useState<Theme>("dark");
-
-  const updateTheme = (theme: Theme) => {
-    if (theme === "light") {
-      setTheme("light");
-      window.localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
-    } else {
-      setTheme("dark");
-      window.localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
-    }
-  };
+  const [theme, setTheme] = useState<Theme>(
+    () => (localStorage.getItem("theme") as Theme) || "dark",
+  );
 
   useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme") as Theme | null;
+    document.documentElement.classList.remove("light", "dark");
 
-    if (localTheme) {
-      setTheme(localTheme);
+    if (theme === "system") {
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
 
-      if (localTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      }
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add(systemTheme);
+      return;
     }
-  }, []);
+
+    document.documentElement.classList.add(theme);
+  }, [theme]);
 
   return (
     <ThemeContext.Provider
       value={{
         theme,
-        updateTheme,
+        setTheme: (theme: Theme) => {
+          localStorage.setItem("theme", theme);
+          setTheme(theme);
+        },
       }}
     >
       {children}
