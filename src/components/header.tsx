@@ -1,4 +1,4 @@
-import { Menu, Linkedin } from "lucide-react";
+import { HamburgerMenuIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +20,7 @@ export default function Header() {
           <Sheet>
             <SheetTrigger asChild>
               <Button size="icon" variant="ghost">
-                <Menu className="h-6 w-6" />
+                <HamburgerMenuIcon className="h-6 w-6" />
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
@@ -70,7 +70,7 @@ export default function Header() {
         <div>
           <Button size="icon" variant="ghost">
             <a target="_blank" href="https://www.linkedin.com/in/abhayvatoo/">
-              <Linkedin className="h-6 w-6" />
+              <LinkedInLogoIcon className="h-5 w-5 sm:h-4 sm:w-4" />
             </a>
           </Button>
           <ThemeMenu />

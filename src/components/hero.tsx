@@ -1,11 +1,11 @@
-import { Mail } from "lucide-react";
+import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
 
 import { Button } from "@/components/ui/button";
 
-function Hero() {
+export default function Hero() {
   return (
     <section className="mx-auto grid max-w-[760px] py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
-      <p className="w-full p-8 text-center text-lg text-muted-foreground border border-dashed">
+      <p className="w-full p-8 text-center text-lg text-muted-foreground border border-b-0 border-dashed">
         Hi, I'm
         <span className="pl-2 text-2xl text-primary leading-tight tracking-tighter">
           Abhay Vatoo 👋
@@ -19,7 +19,7 @@ function Hero() {
         </span>
       </h1>
 
-      <div className="w-full p-8 grid text-center text-lg text-muted-foreground sm:text-xl border border-dashed">
+      <div className="w-full p-8 grid text-center text-lg text-muted-foreground sm:text-xl border border-t-0 border-dashed">
         <p>
           a full-stack
           <span className="font-bold text-primary pl-1">
@@ -35,7 +35,7 @@ function Hero() {
         <div className="flex justify-center">
           <Button asChild className="mt-12 w-48">
             <a href="mailto:abhay.vatoo@queensu.ca">
-              <Mail className="h-4 w-4 mr-2" />
+              <EnvelopeClosedIcon className="h-4 w-4 mr-2" />
               Connect with me
             </a>
           </Button>
@@ -44,5 +44,3 @@ function Hero() {
     </section>
   );
 }
-
-export default Hero;
