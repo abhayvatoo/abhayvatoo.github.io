@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section className="mx-auto grid max-w-[760px] py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
+    <section className="container relative mx-auto grid max-w-screen-md py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
       <p className="w-full p-8 text-center text-lg text-muted-foreground border border-b-0 border-dashed">
         Hi, I'm
         <span className="pl-2 text-2xl text-primary leading-tight tracking-tighter">

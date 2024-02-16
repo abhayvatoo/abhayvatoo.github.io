@@ -10,7 +10,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import ThemeMenu from "./theme-menu";
+import ThemeMenu from "./ThemeMenu";
 
 export default function Header() {
   return (
@@ -25,12 +25,16 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <SheetHeader>
-                <SheetTitle>AV</SheetTitle>
+                <SheetTitle>
+                  <Button variant="link">
+                    <a href="/">AV</a>
+                  </Button>
+                </SheetTitle>
               </SheetHeader>
               <div className="grid gap-4 py-4">
                 <SheetClose asChild>
                   <Button variant="link">
-                    <a href="/#about">About</a>
+                    <a href="/#experience">Experience</a>
                   </Button>
                 </SheetClose>
                 <SheetClose asChild>
@@ -56,7 +60,7 @@ export default function Header() {
         <div className="hidden sm:flex">
           <nav className="flex space-x-4">
             <Button variant="link">
-              <a href="/#about">About</a>
+              <a href="/#experience">Experience</a>
             </Button>
             <Button variant="link">
               <a href="#skills">Skills</a>
