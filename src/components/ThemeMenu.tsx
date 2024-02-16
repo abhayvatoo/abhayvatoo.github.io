@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import useTheme from "@/hooks/useTheme";
-import { Theme } from "@/contexts/theme-context";
+import { Theme } from "@/contexts/ThemeContext";
 
 function getIconForCurrentTheme(theme: Theme) {
   const moon = <MoonIcon className="h-5 w-5 sm:h-4 sm:w-4" />;
