@@ -46,7 +46,7 @@ export default function Experience() {
             </div>
 
             <div className="w-full pt-8 md:pl-8">
-              <Card>
+              <Card className="bg-secondary">
                 <CardHeader className="pb-4">
                   <CardTitle className="flex content-start text-lg tracking-tighter">
                     {job.title}
@@ -61,17 +61,13 @@ export default function Experience() {
 
                   <div className="flex items-center">
                     <SewingPinIcon className="h-4 w-4 mr-2" />
-                    <p className="text-sm text-muted-foreground">
-                      {job.location}
-                    </p>
+                    <p className="text-sm">{job.location}</p>
                   </div>
 
                   <div className="lg:hidden">
                     <div className="flex items-center">
                       <CalendarIcon className="h-4 w-4 mr-2" />
-                      <p className="text-sm text-muted-foreground">
-                        {job.date}
-                      </p>
+                      <p className="text-sm">{job.date}</p>
                     </div>
                   </div>
                 </CardHeader>
@@ -103,8 +99,8 @@ export default function Experience() {
 
 function Tile({ title }: { title: string }) {
   return (
-    <div className="p-2 m-2 border rounded-lg">
-      <p className="text-sm text-cyan-700 dark:text-cyan-300">{title}</p>
+    <div className="p-2 m-2 border rounded-xl bg-secondary-foreground">
+      <p className="text-sm text-secondary">{title}</p>
     </div>
   );
 }
