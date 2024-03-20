@@ -33,10 +33,10 @@ export default function Hero() {
         </p>
 
         <div className="flex justify-center">
-          <Button asChild className="mt-12 px-8 py-8 text-lg">
+          <Button asChild className="mt-12 px-8 py-8 text-lg rounded-full">
             <a href="mailto:abhay.vatoo@queensu.ca">
               <EnvelopeClosedIcon className="h-4 w-4 mr-2" />
-              Connect with me
+              Get in touch
             </a>
           </Button>
         </div>
